@@ -1,0 +1,208 @@
+body {
+  height: 95%;
+  margin: 15px;
+  background-image: url("images/bg.jpg");
+}
+h1 {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 5%;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: bolder;
+}
+#col1 {
+  width: 100%;
+  font-size: 15pt;
+  height: 100%;
+  display: table;
+}
+@media only screen and (max-device-width: 600px){
+  #map {
+    height: 300px !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  #myList{
+    display: block !important;
+    padding-top: 5%;
+    width: 100% !important;
+    height: 15% !important;
+    padding-right: 0px !important;
+  }
+  #col1 {
+    font-size: 13pt !important;
+    height: 100% !important;
+    display: block !important;
+  }
+}
+li {
+  list-style: none;
+  color: white;
+  line-height: 50px;
+  font-family: "Arial", Verdana, sans-serif;
+}
+#map {
+  display: table-cell;
+  width: 70%;
+}
+
+/* DropDown */
+
+#myList{
+  display: table-cell;
+  padding-top: 5%;
+  width: 30%;
+  height: 450px;
+  padding-right: 15px;
+}
+
+li{
+  display: none;
+  position: relative;
+}
+
+a{
+  background-color: #f8f8f8;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .4);
+  color:#666;
+  display: block;
+  padding: 15px;
+  -webkit-transition: color .2s linear, padding .2s linear;
+     -moz-transition: color .2s linear, padding .2s linear;
+       -o-transition: color .2s linear, padding .2s linear;
+        transition: color .2s linear, padding .2s linear;
+}
+
+a:hover{
+  background-color: #f0f0f0;
+  color: #0088cc;
+  padding-left: 30px;
+}
+
+
+span{
+  background-color: #f8f8f8;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .4);
+  color:#666;
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+  position: relative;
+  font-weight: bold;
+  padding-left: 15px !important;
+}
+
+
+span:after{
+  content: "\25BC";
+  position: absolute;
+  right: 15px;
+  top:15px;
+}
+
+.expand ul{
+  height: auto;
+}
+
+.expand li{
+  display: block;
+
+  -webkit-animation: expandAll .2s ease both;
+     -moz-animation: expandAll .2s ease both;
+       -o-animation: expandAll .2s ease both;
+        animation: expandAll .2s ease both;
+
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+       -o-animation-play-state: running;
+        animation-play-state: running;
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+         -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+}
+
+.expand span, span:hover{
+  color: #0088cc;
+}
+
+.expand span:after{
+  content: "\25B2";
+  position: absolute;
+  right: 15px;
+  top:15px;
+}
+
+.collapse ul{
+  height: 0px;
+}
+
+.collapse li{
+  display: block;
+
+  -webkit-animation: collapseAll .2s ease both;
+     -moz-animation: collapseAll .2s ease both;
+       -o-animation: collapseAll .2s ease both;
+        animation: collapseAll .2s ease both;
+
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+       -o-animation-play-state: running;
+        animation-play-state: running;
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+         -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+}
+
+
+
+/* Keyframes */
+
+@-webkit-keyframes collapseAll {
+    0% { -webkit-transform: perspective(300px) rotateX(0deg); }
+    100% { -webkit-transform: perspective(300px) rotateX(-90deg); }
+}
+
+@-webkit-keyframes expandAll {
+    0% { -webkit-transform: perspective(300px) rotateX(-90deg); }
+    100% { -webkit-transform: perspective(300px) rotateX(0deg); }
+}
+
+
+@-moz-keyframes collapseAll {
+    0% { -moz-transform: perspective(300px) rotateX(0deg); }
+    100% { -moz-transform: perspective(300px) rotateX(-90deg); }
+}
+
+@-moz-keyframes expandAll {
+    0% { -moz-transform: perspective(300px) rotateX(-90deg); }
+    100% { -moz-transform: perspective(300px) rotateX(0deg); }
+}
+
+@-o-keyframes collapseAll {
+    0% { -o-transform: perspective(300px) rotateX(0deg); }
+    100% { -o-transform: perspective(300px) rotateX(-90deg); }
+}
+
+@-o-keyframes expandAll {
+    0% { -o-transform: perspective(300px) rotateX(-90deg); }
+    100% { -o-transform: perspective(300px) rotateX(0deg); }
+}
+
+@keyframes collapseAll {
+    0% { transform: perspective(300px) rotateX(0deg); }
+    100% { transform: perspective(300px) rotateX(-90deg); }
+}
+
+@keyframes expandAll {
+    0% { transform: perspective(300px) rotateX(-90deg); }
+    100% { transform: perspective(300px) rotateX(0deg); }
+}
