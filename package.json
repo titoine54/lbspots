@@ -1,15 +1,19 @@
 {
   "name": "lbspots",
   "version": "1.0.0",
-  "private": true,
-  "description": "",
-  "main": "\u001b[A\u001b[B",
+  "description": "LBSPOTS",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/titoine54/lbspots.git"
+  },
   "author": "titoine54",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0"
-  }
+  "bugs": {
+    "url": "https://github.com/titoine54/lbspots/issues"
+  },
+  "homepage": "https://github.com/titoine54/lbspots#readme"
 }

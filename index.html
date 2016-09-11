@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html ng-app="lbspots">
+<html>
   <head>
     <title>LB Spots</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-
-    <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="maps.js"></script>
+    <!-- <link rel="shortcut icon" type="image/png" href="images/fav.png"/> -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDYVh3asXwtt-r3zi6veb9c1-h8CuXaJ0&callback=initMap" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDYVh3asXwtt-r3zi6veb9c1-h8CuXaJ0&callback=initMap" async defer></script> -->
   </head>
 
   <body>
     <h1>LB SPOTS</h1>
-    <div id='row1' ng-controller='ctrl'>
-      <div id="myList">
-        <span>City</span>
-        <ul>
-          <li><a href="#">Montreal</a></li>
-          <li><a href="#">Sherbrooke</a></li>
-          <li><a href="#">Saint-Jean-sur-Richelieu</a></li>
-        </ul>
-      </div>
-      <div id="map"></div>
-    </div>
-    <script src="angular.js"></script>
-    <script src="mysql_connection.js"></script>
+    <span>City : </span>
+    <select>
+      <option>Montreal</option>
+      <option>Quebec</option>
+      <option>Sherbrooke</option>
+    </select>
+    <div id="map" style="width:100%;height:500px"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
   </body>
 </html>
