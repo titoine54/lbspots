@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/titoine54/lbspots/issues"
   },
-  "homepage": "https://github.com/titoine54/lbspots#readme"
+  "homepage": "https://github.com/titoine54/lbspots#readme",
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  }
 }

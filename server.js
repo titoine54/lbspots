@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+require('handlebars');
 
 function onRequest(request, response){
   if (request.method == 'GET' && request.url == '/') {
