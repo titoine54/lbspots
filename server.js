@@ -1,8 +1,8 @@
 var http = require('http');
 var fs = require('fs');
-require('handlebars');
 
 function onRequest(request, response){
+  console.log('Received request');
   if (request.method == 'GET' && request.url == '/') {
     response.writeHeader(200, {"Content-Type": "text/html"});
     fs.createReadStream('./index.html').pipe(response);
@@ -24,4 +24,4 @@ function send404Response(response){
 }
 
 http.createServer(onRequest).listen(8888);
-console.log('Server is running ...')
+console.log('Server is running ...');
