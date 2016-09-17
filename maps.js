@@ -19,14 +19,13 @@ function theMap(city) {
   var mapCanvas = document.getElementById("map");
   var mapOptions = {
     center: new google.maps.LatLng(latitude, longitude),
-    zoom: 10
+    zoom: 11
   }
   var map = new google.maps.Map(mapCanvas, mapOptions);
 }
 
 function getCity() {
   var city = $("#citySelector option:selected").val();
-  $('.displayCity').html(city);
   theMap(city);
 }
 
@@ -35,7 +34,6 @@ $(function() {
     $("#citySelector").val(defaultCity);
 
     var city = $("#citySelector option:selected").val();
-    $('.displayCity').html(city);
 
     theMap(city);
 

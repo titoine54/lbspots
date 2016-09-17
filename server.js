@@ -1,5 +1,9 @@
+//global.$ = require('jquery');
 var http = require('http');
 var fs = require('fs');
+
+
+//global.bootstrap = require('bootstrap');
 
 function onRequest(request, response){
   console.log('Received request');

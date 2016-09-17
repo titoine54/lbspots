@@ -1,28 +1,57 @@
 <html>
+
   <head>
     <title>LB Spots</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/png" href="img/fav.png"/>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   </head>
 
   <body>
-    <h1>LB SPOTS</h1>
-    <span>City : </span>
 
-    <select id='citySelector' required onchange="getCity();">
-      <option value='montreal' selected="">Montreal</option>
-      <option value='quebec' selected="">Quebec</option>
-      <option value='sherbrooke' selected="">Sherbrooke</option>
-    </select>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">LBSpots</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Maps</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div class="displayCity"></div>
-    <div id="map" style="width:100%;height:500px"></div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
-    <script src="maps.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDYVh3asXwtt-r3zi6veb9c1-h8CuXaJ0&callback=theMap"></script>
+    <div class='container'>
+      <span>City : </span>
 
+      <select id='citySelector' required onchange="getCity();">
+        <option value='montreal' selected="">Montreal</option>
+        <option value='quebec' selected="">Quebec</option>
+        <option value='sherbrooke' selected="">Sherbrooke</option>
+      </select>
+
+      <div class="displayCity"></div>
+      <div id="map" style="width:100%;height:500px"></div>
+
+      <script src="maps.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDYVh3asXwtt-r3zi6veb9c1-h8CuXaJ0&callback=theMap"></script>
+    </div>
   </body>
 </html>
