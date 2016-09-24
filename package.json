@@ -4,7 +4,13 @@
   "description": "LBSPOTS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server",
+    "jshint": "jshint api collections config controllers env lib models public/javascripts routes test app.js",
+    "test": "npm run jshint && mocha test",
+    "precommit": "npm test",
+    "prepush": "npm shrinkwrap && npm test",
+    "postmerge": "npm install"
   },
   "repository": {
     "type": "git",
@@ -17,8 +23,11 @@
   },
   "homepage": "https://github.com/titoine54/lbspots#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
-    "handlebars": "^4.0.5",
-    "jquery": "^3.1.0"
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "mongoose": "^4.6.1",
+    "serve-favicon": "^2.3.0"
   }
 }

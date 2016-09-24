@@ -1,31 +1,41 @@
-//global.$ = require('jquery');
+var express = require('express');
 var http = require('http');
-var fs = require('fs');
+var path = require('path');
+var app = express();
+var favicon = require('serve-favicon');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
+app.set('port', 8888);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-//global.bootstrap = require('bootstrap');
+app.use(favicon(path.join(__dirname,'public','favicon.ico')));
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended: false}));
 
-function onRequest(request, response){
-  console.log('Received request');
-  if (request.method == 'GET' && request.url == '/') {
-    response.writeHeader(200, {"Content-Type": "text/html"});
-    fs.createReadStream('./index.html').pipe(response);
-  } else if (request.method == 'GET' && request.url == '/maps.js') {
-      response.writeHeader(200, {"Content-Type": "text/javascript"});
-      fs.createReadStream('./maps.js').pipe(response);
-  } else if (request.method == 'GET' && request.url == 'img/fav.png') {
-      response.writeHeader(200, {"Content-Type": "image/png"});
-      fs.write('img/fav.png').pipe(response);
-  } else {
-    send404Response(response);
-  }
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
 }
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
 
-function send404Response(response){
-  response.writeHeader(404, {"Content-Type": "text/plain"});
-  response.write('Error 404 - Page not found');
-  response.end()
-}
-
-http.createServer(onRequest).listen(8888);
-console.log('Server is running ...');
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
