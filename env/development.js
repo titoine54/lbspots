@@ -8,7 +8,6 @@ module.exports = {
   },
   mongodb: {
     url: 'mongodb://localhost:27017/test'
-    username: ''
   },
   sessionSecret: 'ninja_cat'
 };
